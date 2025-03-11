@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A tua Escape Room">
+    <meta name="keywords" content="Escape Room, Jogo, Palavras">
+    <meta name="author" content="Raquel Cebola">
+    
+    <title>
+        A tua Escape Room
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="title">
+        <h1>A tua Escape Room</h1>
+    </div>
+    <img src="balloon.png" alt="balão" id="balloon">
+    
+    <div id="codeScreen">
+        <h2>Insere o código obtido no jogo anterior:</h2>
+        <input id="codeInput" type="text" />
+        <button id="startButton">Confirmar</button>
+        <div id="codeMessage"></div>
+    </div>
+
+    <div id="gameContainer" class="hidden">
+        <h2>Encontra as palavras no quadro:</h2>  
+        <div id="grid"></div>
+        <div id="victoryMessage" class="hidden">Você encontrou todas as palavras! Parabéns! <br> A próxima pista encontras na pasta.</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

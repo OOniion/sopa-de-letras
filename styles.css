@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #e37272;  
+    color: #1e1b1b;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Garante que o conteúdo ocupe a tela inteira */
+}
+
+h1 {
+    font-size: 6vw; /* Ajustável ao tamanho da tela */
+    font-weight: bold;
+    margin-bottom: 5vh;
+}
+h2 {
+    font-size: 4vw; /* Ajustável ao tamanho da tela */
+    margin-bottom: 2vh;
+}   
+#balloon {
+    width: 15vw; /* Ajustável ao tamanho da tela */
+    height: 15vw;
+    max-width: 100px;
+    max-height: 100px;
+    position: relative; /* Para poder animar */
+    top: 0;
+    left: 0;
+    transition: top 1s;
+}
+
+
+/* 🔹 Grelha Responsiva (10x10) */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(30px, 1fr)); /* Ajustado para 10 colunas */
+    gap: 3px;
+    justify-content: center;
+    margin-top: 2vh;
+    width: 100%; /* Faz a grade ocupar o espaço disponível */
+}
+
+/* 🔹 Células Responsivas */
+.cell {
+    width: 100%; /* Se ajusta automaticamente */
+    height: auto;
+    aspect-ratio: 1 / 1; /* Mantém as células quadradas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    font-size: 3vw; /* Ajustável ao tamanho da tela */
+    cursor: pointer;
+}
+
+.cell:focus {
+    outline: 2px solid rgb(201, 17, 17);
+}
+
+.selected {
+    background-color: rgb(239, 24, 24);
+    color: black;
+}
+
+.error {
+    background-color: red !important;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 🔹 Input Responsivo */
+#codeInput {
+    width: 80%;
+    padding: 10px;
+    font-size: 4vw; /* Ajustável */
+}
+
+/* 🔹 Botões Responsivos */
+button {
+    padding: 10px 20px;
+    font-size: 4vw;
+    background-color: #9d2b2b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 1vh;
+}
+
+button:hover {
+    background-color: #c166cb;
+}
+
+#victoryMessage {
+    margin-top: 2vh;
+    font-size: 5vw; /* Ajustável */
+    color: #1e1b1b;
+    font-weight: bold;
+}
+
+/* 🔹 Ajustes Específicos para Celulares */
+@media (max-width: 500px) {
+    #grid {
+        grid-template-columns: repeat(10, minmax(20px, 1fr)); /* Reduz o tamanho em telas pequenas */
+        gap: 2px;
+    }
+
+    .cell {
+        font-size: 5vw; /* Ajusta tamanho do texto */
+    }
+
+    button {
+        font-size: 4vw;
+        padding: 8px 16px;
+    }
+
+    #codeInput {
+        font-size: 4vw;
+    }
+}
+
